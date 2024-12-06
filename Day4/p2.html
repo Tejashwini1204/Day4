@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email and Password Input</title>
+</head>
+<body>
+    <h2>Enter Email and Password</h2>
+    <form id = Login Form>
+        <label = "email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label = "password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <button type="submit">Submit:</button>
+    </form>
+
+
+    <h3>Submitted Data:</h3>
+    <p id="output"></p>
+
+    <script>
+        // Add event listener to the form submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+            
+            // Get email and password values from input fields
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Display the email and password in the output paragraph
+            document.getElementById("output").innerHTML = `
+                <strong>Email:</strong> ${email} <br>
+                <strong>Password:</strong> ${password}
+            `;
+        });
+    </script>
+</body>
+</html>
